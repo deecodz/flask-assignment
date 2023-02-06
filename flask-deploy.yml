@@ -32,6 +32,11 @@
     - name: Install flask
       pip:
         name: flask
+        
+    - name: Delete content & directory
+      file:
+        state: absent
+        path: /var/www/flask_app
 
     - name: Create Flask app directory
       become: yes
