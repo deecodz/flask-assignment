@@ -14,10 +14,6 @@
          force_apt_get=yes 
          cache_valid_time=3600
 
-     - name: Install Git
-      apt:
-        name: git
-
     - name: Install Apache
       apt:
         name: apache2
