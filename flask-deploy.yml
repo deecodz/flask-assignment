@@ -38,12 +38,12 @@
         state: absent
         path: /var/www/flask_app
 
-   # - name: Create Flask app directory
-     # become: yes
-     # file:
-      #  path: /var/www/flask_app
-      #  state: directory
-       # mode: 755
+    - name: Create Flask app directory
+      become: yes
+      file:
+        path: /var/www/flask_app
+        state: directory
+        mode: 0755
 
     - name: Clone Flask app
       become_user: ubuntu
