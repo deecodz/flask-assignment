@@ -10,9 +10,9 @@
 
     - name: Update apt-get repo and cache
        apt: 
-       update_cache=yes 
-       force_apt_get=yes 
-       cache_valid_time=3600
+         update_cache=yes 
+         force_apt_get=yes 
+         cache_valid_time=3600
 
     - name: Install Apache
       apt:
@@ -77,5 +77,7 @@
       service:
         name: apache2
         state: restarted
+
+
 
 
