@@ -16,8 +16,8 @@
         cache_valid_time: 3600
 
     - name: Install Apache
-      become: yes
-      become_user: ubuntu
+      become: true
+      become_method: sudo
       apt:
         name: apache2
         update_cache: yes
