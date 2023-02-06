@@ -39,15 +39,13 @@
         path: /var/www/flask_app
 
     - name: Create Flask app directory
-      become: yes
-      become_user: ubuntu
+      become: true
       file:
         path: /var/www/flask_app
         state: directory
-        mode: 0755
+        mode: 0777
 
     - name: Clone Flask app
-      become_user: ubuntu
       git:
         repo: git@github.com:deecodz/flask-assignment.git
         dest: /var/www/flask_app
