@@ -2,7 +2,6 @@
 
 - hosts: [g1]
   become: true
-  gather_facts: false
 
   tasks:
     - ping:
@@ -42,6 +41,7 @@
         mode: 755
 
     - name: Clone Flask app
+      become_user: ubuntu
       git:
         repo: git@github.com:deecodz/flask-assignment.git
         dest: /var/www/flask_app
