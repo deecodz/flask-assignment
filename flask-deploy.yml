@@ -17,6 +17,7 @@
 
     - name: Install Apache
       become: yes
+      become_user: root
       apt:
         name: apache2
         update_cache: yes
