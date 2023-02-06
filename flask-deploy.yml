@@ -16,8 +16,9 @@
         cache_valid_time=3600
 
    - name: Install Apache
-      apt:
-        name: apache2
+     become: yes
+     apt:
+       name: apache2
 
     - name: Install Python3
       apt:
