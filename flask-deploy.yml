@@ -13,12 +13,13 @@
       apt: 
         update_cache: yes 
         force_apt_get: yes 
-        cache_valid_time=3600
+        cache_valid_time: 3600
 
     - name: Install Apache
       become: yes
       apt:
         name: apache2
+        update_cache: yes
 
     - name: Install Python3
       apt:
@@ -79,9 +80,3 @@
       service:
         name: apache2
         state: restarted
-
-
-
-
-
-
