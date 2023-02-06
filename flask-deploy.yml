@@ -1,6 +1,7 @@
 ---
 
 - hosts: [g1]
+  become: true
   gather_facts: false
 
   tasks:
@@ -15,7 +16,7 @@
       become: true
       apt:
         name: apache2
-        update_cache: yes
+        update_cache: yes
 
     - name: Install Python3
       apt:
