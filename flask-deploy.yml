@@ -44,12 +44,21 @@
         path: /var/www/flask_app
         state: directory
         mode: 0777
+        
+      - name: copy ssh private-key
+        copy: >
+          src=~/.ssh/id_rsa
+          dest=/root/.ssh/id_rsa.github
+          owner=root
+          group=root
+          mode=0600
 
     - name: Clone Flask app
       become: false
       become_user: ubuntu
       git:
         repo: git@github.com:deecodz/flask-assignment.git
+        key_file: /root/.ssh/id_rsa.github
         dest: /var/www/flask_app
         clone: yes
         version: main
