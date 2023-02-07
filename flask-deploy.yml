@@ -50,8 +50,8 @@
          src: ~/.ssh/id_rsa
          dest: /root/.ssh/id_rsa.github
          owner: root
-        group: root
-        mode: 0600
+         group: root
+         mode: 0600
 
     - name: Clone Flask app
       become: false
