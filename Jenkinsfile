@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Hansible...🤣'
+                echo 'Running Playbook'
                 ansiblePlaybook becomeUser: 'ubuntu', inventory: 'host.ini', playbook: 'flask-deploy.yml'
             }
         }
