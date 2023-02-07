@@ -54,7 +54,7 @@
          mode: 0600
 
     - name: Clone Flask app
-      become: false
+      become: true
       become_user: ubuntu
       git:
         repo: git@github.com:deecodz/flask-assignment.git
