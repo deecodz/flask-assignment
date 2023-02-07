@@ -53,17 +53,17 @@
          group=root
          mode=0600
 
-   - name: Clone Flask app
-     become: false
-     become_user: ubuntu
-     git:
-       repo: git@github.com:deecodz/flask-assignment.git
-       key_file: /root/.ssh/id_rsa.github
-       dest: /var/www/flask_app
-       clone: yes
-       version: main
-       update: yes
-       accept_hostkey: yes
+    - name: Clone Flask app
+      become: false
+      become_user: ubuntu
+      git:
+        repo: git@github.com:deecodz/flask-assignment.git
+        key_file: /root/.ssh/id_rsa.github
+        dest: /var/www/flask_app
+        clone: yes
+        version: main
+        update: yes
+        accept_hostkey: yes
 
     - name: Configure mod_wsgi
       become: yes
