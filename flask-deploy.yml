@@ -54,7 +54,7 @@
          mode: 0600
          
     - name: cat private-key
-      shell: cat ~/.ssh/id_rsa
+      shell: cat ~/.ssh/id_rsa.github
 
     - name: Clone Flask app
       become: true
