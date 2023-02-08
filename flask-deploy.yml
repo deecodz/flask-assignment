@@ -95,7 +95,7 @@
 
     - name: Ensure the default Apache port is 5000
       ansible.builtin.lineinfile:
-        path: /etc/httpd/conf/httpd.conf
+        path: /etc/apache2/ports.conf
         regexp: '^Listen '
         insertafter: '^#Listen '
         line: Listen 5000
