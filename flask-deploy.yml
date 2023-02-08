@@ -38,12 +38,12 @@
         state: absent
         path: /var/www/flask_app
 
-    - name: Create Flask app directory
-      become: true
-      file:
-        path: /var/www/flask_app
-        state: directory
-        mode: 0777
+   # - name: Create Flask app directory
+   #   become: true
+   #   file:
+   #     path: /var/www/flask_app
+   #     state: directory
+   #     mode: 0777
         
     - name: copy ssh private-key
       copy: 
@@ -59,7 +59,7 @@
       git:
         repo: git@github.com:deecodz/flask-assignment.git
         key_file: /root/.ssh/id_rsa.github
-        dest: /var/www/flask_app
+        dest: /var/www/
         clone: yes
         version: main
         update: yes
