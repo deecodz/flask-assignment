@@ -71,26 +71,26 @@
 
     - name: Configure mod_wsgi
       become: yes
-      template:
+      copy:
         remote_src: /var/www/flask_app/flask_app.conf
         dest: /etc/apache2/sites-available/flask_app.conf
         
 
-    - name: Enable Flask app virtual host
-      become: yes
-      file:
-        remote_src: /etc/apache2/sites-available/flask_app.conf
-        dest: /etc/apache2/sites-enabled/flask_app.conf
-        state: link
+#     - name: Enable Flask app virtual host
+#       become: yes
+#       file:
+#         remote_src: /etc/apache2/sites-available/flask_app.conf
+#         dest: /etc/apache2/sites-enabled/flask_app.conf
+#         state: link
 
     - name: Enable new site
-      shell: /usr/sbin/a2ensite {{ flask_app.conf }}
-      notify: Reload Apache
+      shell: /usr/sbin/a2ensite flask_app
+#       notify: Reload Apache
 
     - name: Disable default Apache site
-      shell: /usr/sbin/a2dissite 000-default.conf
-      when: disable_default
-      notify: Reload Apache
+      shell: /usr/sbin/a2dissite 000-default
+#       when: disable_default
+#       notify: Reload Apache
 
     - name: Restart Apache service
       become: yes
