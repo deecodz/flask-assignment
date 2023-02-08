@@ -72,7 +72,7 @@
     - name: Configure mod_wsgi
       become: yes
       template:
-        src: /var/www/flask_app/flask-assignment/flask_app.conf
+        src: /var/www/flask_app/flask_app.conf
         dest: /etc/apache2/sites-available/flask_app.conf
         
 
