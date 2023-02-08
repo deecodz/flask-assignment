@@ -72,7 +72,8 @@
     - name: Configure mod_wsgi
       become: yes
       copy:
-        remote_src: /var/www/flask_app/flask_app.conf
+        src: /var/www/flask_app/flask_app.conf
+        remote_src: true
         dest: /etc/apache2/sites-available/flask_app.conf
         
 
