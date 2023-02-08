@@ -43,6 +43,7 @@
       file:
          path: /var/www/flask_app
          state: directory
+         owner: ubuntu
          mode: 0777
         
     - name: copy ssh private-key
