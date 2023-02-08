@@ -58,7 +58,7 @@
 
     - name: Clone Flask app
       become: true
-      #become_user: ubuntu
+      become_user: ubuntu
       git:
         repo: git@github.com:deecodz/flask-assignment.git
         key_file: /root/.ssh/id_rsa.github
