@@ -59,7 +59,7 @@
       git:
         repo: git@github.com:deecodz/flask-assignment.git
         key_file: /root/.ssh/id_rsa.github
-        dest: /var/www/
+        dest: /var/www/flask_app
         clone: yes
         version: main
         update: yes
